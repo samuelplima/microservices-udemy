@@ -16,9 +16,8 @@ import lombok.Setter;
 @Builder
 public class WorkerDTO {
 
+    private Long Id;
     private String name;
     private Double dailyIncome;
-    private Integer Days;
-    private Double total;
 
 }
