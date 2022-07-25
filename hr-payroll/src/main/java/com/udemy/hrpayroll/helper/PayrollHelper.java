@@ -10,6 +10,7 @@ public class PayrollHelper {
                 .name(payroll.getName())
                 .days(payroll.getDays())
                 .dailyIncome(payroll.getDailyIncome())
+                .total(payroll.getDays()* payroll.getDailyIncome())
                 .build();
     }
 

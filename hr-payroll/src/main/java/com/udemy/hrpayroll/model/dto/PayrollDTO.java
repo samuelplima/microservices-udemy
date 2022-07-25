@@ -10,5 +10,6 @@ public class PayrollDTO {
     private String name;
     private Double dailyIncome;
     private Integer days;
+    private Double total;
 
 }

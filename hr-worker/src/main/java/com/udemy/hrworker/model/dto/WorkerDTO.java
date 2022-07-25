@@ -8,9 +8,7 @@ import lombok.Data;
 public class WorkerDTO {
 
     private Long Id;
-
     private String name;
-
     private Double dailyIncome;
 
 }
