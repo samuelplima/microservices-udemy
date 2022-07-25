@@ -14,7 +14,6 @@ public class WorkersController {
 
     private final WorkerService workerService;
 
-
     @GetMapping(value = "/listAll")
     @ResponseBody
     public List<WorkerDTO> listAll(){
