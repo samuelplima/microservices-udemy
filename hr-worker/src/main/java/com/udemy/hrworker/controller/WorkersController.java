@@ -5,6 +5,7 @@ import com.udemy.hrworker.service.WorkerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 @RequestMapping(value = "/workers")
 @RequiredArgsConstructor
 @Slf4j
+@RefreshScope
 public class WorkersController {
     private final WorkerService workerService;
 
