@@ -3,6 +3,8 @@ package com.udemy.hrworker.controller;
 import com.udemy.hrworker.model.dto.WorkerDTO;
 import com.udemy.hrworker.service.WorkerService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/workers")
 @RequiredArgsConstructor
+@Slf4j
 public class WorkersController {
     private final WorkerService workerService;
+
+    @Value("${test.config}")
+    private String testConfig;
 
     @GetMapping(value = "/listAll")
     public List<WorkerDTO> listAll(){
@@ -21,6 +27,11 @@ public class WorkersController {
     @GetMapping(value = "/findById/{id}")
     public WorkerDTO findById(@PathVariable Long id){
         return workerService.findById(id);
+    }
+
+    @GetMapping(value = "/configs")
+    public void getConfigs(){
+        log.info("Configuraion :" + testConfig);
     }
 
 }
