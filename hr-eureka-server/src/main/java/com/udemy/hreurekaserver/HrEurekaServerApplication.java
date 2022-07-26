@@ -1,4 +1,4 @@
-package com.example.hreurekaserver;
+package com.udemy.hreurekaserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
