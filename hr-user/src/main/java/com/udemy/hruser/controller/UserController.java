@@ -1,0 +1,30 @@
+package com.udemy.hruser.controller;
+
+import com.udemy.hruser.model.dto.UserDTO;
+import com.udemy.hruser.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/user")
+@RequiredArgsConstructor
+public class UserController {
+
+    private final UserService userService;
+
+    @GetMapping(value = "/findById/{id}")
+    public UserDTO findById(@PathVariable Long id) {
+        return userService.findById(id);
+    }
+
+    @GetMapping(value = "/findByEmail/{email}")
+    public UserDTO findByEmail(@PathVariable String email) {
+        return userService.findByEmail(email);
+    }
+
+
+
+}
