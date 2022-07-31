@@ -18,9 +18,6 @@ import java.util.List;
 public class WorkersController {
     private final WorkerService workerService;
 
-    @Value("${test.config}")
-    private String testConfig;
-
     @GetMapping(value = "/listAll")
     public List<WorkerDTO> listAll(){
         return workerService.listAllWorkers();
@@ -29,11 +26,6 @@ public class WorkersController {
     @GetMapping(value = "/findById/{id}")
     public WorkerDTO findById(@PathVariable Long id){
         return workerService.findById(id);
-    }
-
-    @GetMapping(value = "/configs")
-    public void getConfigs(){
-        log.info("Configuraion :" + testConfig);
     }
 
 }
